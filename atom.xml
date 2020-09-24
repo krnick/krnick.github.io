@@ -6,7 +6,7 @@
   <link href="https://krnick.github.io/atom.xml" rel="self"/>
   
   <link href="https://krnick.github.io/"/>
-  <updated>2020-09-23T05:21:22.864Z</updated>
+  <updated>2020-09-24T06:17:45.538Z</updated>
   <id>https://krnick.github.io/</id>
   
   <author>
@@ -17,25 +17,46 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>pipenv</title>
+    <link href="https://krnick.github.io/2020/09/24/pipenv/"/>
+    <id>https://krnick.github.io/2020/09/24/pipenv/</id>
+    <published>2020-09-24T06:15:06.000Z</published>
+    <updated>2020-09-24T06:17:45.538Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Install-from-github"><a href="#Install-from-github" class="headerlink" title="Install from github"></a>Install from github</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv install -e git+https://github.com/quark-engine/quark-engine.git<span class="comment">#egg=quark-engine</span></span><br></pre></td></tr></table></figure><ul><li>First “quark-enigne”: user</li><li>Second “quark-engine”: repo</li><li>@develop: The branch what you want to install</li><li>#egg=quark-engine: The package name that will be recorded in pipenv</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Install-from-github&quot;&gt;&lt;a href=&quot;#Install-from-github&quot; class=&quot;headerlink&quot; title=&quot;Install from github&quot;&gt;&lt;/a&gt;Install from github&lt;/h1&gt;&lt;figu</summary>
+      
+    
+    
+    
+    
+    <category term="python, git" scheme="https://krnick.github.io/tags/python-git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>first</title>
     <link href="https://krnick.github.io/2020/09/23/first/"/>
     <id>https://krnick.github.io/2020/09/23/first/</id>
     <published>2020-09-23T03:36:31.000Z</published>
-    <updated>2020-09-23T05:21:22.864Z</updated>
+    <updated>2020-09-23T09:53:53.914Z</updated>
     
-    <content type="html"><![CDATA[<p>Hello my name is nick.</p>]]></content>
+    <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">say_hello</span>():</span></span><br><span class="line">    print(<span class="string">&quot;hello world&quot;</span>)</span><br></pre></td></tr></table></figure>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;Hello my name is nick.&lt;/p&gt;
-</summary>
+    <summary type="html">&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td</summary>
       
     
     
     
     
-    <category term="android" scheme="https://krnick.github.io/tags/android/"/>
+    <category term="python" scheme="https://krnick.github.io/tags/python/"/>
     
   </entry>
   
