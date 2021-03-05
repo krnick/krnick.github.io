@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://krnick.github.io/talks/index.html</loc>
+    
+    <lastmod>2021-03-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/about/index.html</loc>
+    
+    <lastmod>2021-03-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://krnick.github.io/2020/09/23/first/</loc>
     
     <lastmod>2020-09-24</lastmod>
@@ -12,20 +26,6 @@
     <loc>https://krnick.github.io/2020/09/24/pipenv/</loc>
     
     <lastmod>2020-09-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://krnick.github.io/about/index.html</loc>
-    
-    <lastmod>2020-09-23</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://krnick.github.io/talks/index.html</loc>
-    
-    <lastmod>2020-09-23</lastmod>
     
   </url>
   
@@ -60,7 +60,7 @@
 
   <url>
     <loc>https://krnick.github.io/</loc>
-    <lastmod>2020-09-24</lastmod>
+    <lastmod>2021-03-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -68,14 +68,14 @@
   
   <url>
     <loc>https://krnick.github.io/tags/python/</loc>
-    <lastmod>2020-09-24</lastmod>
+    <lastmod>2021-03-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://krnick.github.io/tags/git/</loc>
-    <lastmod>2020-09-24</lastmod>
+    <lastmod>2021-03-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
