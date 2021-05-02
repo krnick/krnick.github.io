@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://krnick.github.io/2021/05/02/hello-world/</loc>
+    
+    <lastmod>2021-05-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://krnick.github.io/about/index.html</loc>
     
     <lastmod>2021-05-02</lastmod>
@@ -45,13 +52,6 @@
   
   <url>
     <loc>https://krnick.github.io/tags/index.html</loc>
-    
-    <lastmod>2020-09-23</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://krnick.github.io/2020/09/23/hello-world/</loc>
     
     <lastmod>2020-09-23</lastmod>
     
