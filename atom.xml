@@ -6,7 +6,7 @@
   <link href="https://krnick.github.io/atom.xml" rel="self"/>
   
   <link href="https://krnick.github.io/"/>
-  <updated>2020-09-24T06:22:39.000Z</updated>
+  <updated>2021-05-03T08:23:20.719Z</updated>
   <id>https://krnick.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Debian Packaging</title>
+    <link href="https://krnick.github.io/2021/05/03/Debian-Packaging/"/>
+    <id>https://krnick.github.io/2021/05/03/Debian-Packaging/</id>
+    <published>2021-05-03T08:10:42.000Z</published>
+    <updated>2021-05-03T08:23:20.719Z</updated>
+    
+    <content type="html"><![CDATA[<p>前陣子要將 Quark 上傳至 Kali Linux，需要包成一個 Debian 的安裝檔案費了不少力氣，以下紀錄一下該如何打包一個 Python 專案至 Debian 的deb安裝檔案。</p><h2 id="Creating-the-Debian-files"><a href="#Creating-the-Debian-files" class="headerlink" title="Creating the Debian files"></a>Creating the Debian files</h2><p>Debian套件強制規定 debian 目錄下需要有以下四個檔案</p><ul><li>control</li><li>copyright</li><li>changelog</li><li>rules</li></ul><p>細節可參考 Quark 完整後的<a href="https://github.com/quark-engine/quark-engine/tree/master/debian">範例-Debian</a></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dh_make -p quark-engine_21.02.2 -f quark-engine_21.02.2.orig.tar.gz </span><br><span class="line"></span><br><span class="line">rm *.ex *.EX README.* *.docs</span><br></pre></td></tr></table></figure><h2 id="System-Requirements"><a href="#System-Requirements" class="headerlink" title="System Requirements"></a>System Requirements</h2><p>更新環境</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb http://http.kali.org/kali kali-rolling main non-free contrib&quot;</span> | sudo tee /etc/apt/sources.list</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure><p>安裝需要的檔案</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y packaging-dev apt-file gitk mr</span><br><span class="line"></span><br><span class="line">sudo apt-get install -y devscripts debhelper dh-make git-buildpackage sbuild dh-python python3-all</span><br></pre></td></tr></table></figure><p>設定 sbuild，完成後重新登入</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /srv/chroots/</span><br><span class="line"><span class="built_in">cd</span> /srv/chroots/</span><br><span class="line"></span><br><span class="line">sudo sbuild-createchroot --keyring=/usr/share/keyrings/kali-archive-keyring.gpg --arch=amd64 --components=main,contrib,non-free --include=kali-archive-keyring kali-dev kali-dev-amd64-sbuild http://http.kali.org/kali</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;source-root-groups=root,sbuild&quot;</span> | sudo tee -a /etc/schroot/chroot.d/kali-dev-amd64-sbuild*</span><br><span class="line"></span><br><span class="line">sudo sbuild-adduser <span class="variable">$USER</span></span><br></pre></td></tr></table></figure><h2 id="Importing"><a href="#Importing" class="headerlink" title="Importing"></a>Importing</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">mkdir -p ~/kali/packages/quark-engine ~/kali/upstream/</span><br><span class="line"></span><br><span class="line">wget https://github.com/quark-engine/quark-engine/archive/refs/tags/v21.4.3.tar.gz  -O ~/kali/upstream/quark-engine_21.4.3.orig.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /home/kali/kali/packages/quark-engine</span><br><span class="line"></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line">gbp import-orig ~/kali/upstream/quark-engine_21.4.3.orig.tar.gz</span><br></pre></td></tr></table></figure><h2 id="Build-Package"><a href="#Build-Package" class="headerlink" title="Build Package"></a>Build Package</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gbp buildpackage --git-builder=sbuild</span><br></pre></td></tr></table></figure><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.kali.org/docs/development/public-packaging/">https://www.kali.org/docs/development/public-packaging/</a><br><a href="https://www.kali.org/docs/development/intro-to-packaging-example/">https://www.kali.org/docs/development/intro-to-packaging-example/</a><br><a href="https://www.kali.org/docs/development/setting-up-packaging-system/">https://www.kali.org/docs/development/setting-up-packaging-system/</a><br><a href="https://www.kali.org/docs/development/advanced-packaging-example/">https://www.kali.org/docs/development/advanced-packaging-example/</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;前陣子要將 Quark 上傳至 Kali Linux，需要包成一個 Debian 的安裝檔案費了不少力氣，以下紀錄一下該如何打包一個 Python 專案至 Debian 的deb安裝檔案。&lt;/p&gt;
+&lt;h2 id=&quot;Creating-the-Debian-files&quot;&gt;&lt;a </summary>
+      
+    
+    
+    
+    
+    <category term="Debian" scheme="https://krnick.github.io/tags/Debian/"/>
+    
+    <category term="Linux" scheme="https://krnick.github.io/tags/Linux/"/>
+    
+    <category term="Kali Linux" scheme="https://krnick.github.io/tags/Kali-Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>pipenv</title>
