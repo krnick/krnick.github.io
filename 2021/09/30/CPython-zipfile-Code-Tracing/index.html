@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="BackgroundI reported a zip bomb vulnerability to the CPython community in 2019. Here are all the interesting resources and ideas.
+Issue Discussion on "/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="JunWei Song"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="CVE-2019-9674 Zip bomb vulnerability in CPython Lib/zipfile.py"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="BackgroundI reported a zip bomb vulnerability to the CPython community in 2019. Here are all the interesting resources and ideas.
+Issue Discussion on "/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="JunWei Song&#39; Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://krnick.github.ioimg/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://krnick.github.ioimg/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>CVE-2019-9674 Zip bomb vulnerability in CPython Lib/zipfile.py - JunWei Song&#39; Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="img/favicon.ico"/>
+    
+
+<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="JunWei Song' Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">JunWei Song</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about">
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/krnick">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>CVE-2019-9674 Zip bomb vulnerability in CPython Lib/zipfile.py</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2021-09-30
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/vulnerability/">#vulnerability</a> <a href="/tags/python/">#python</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h1><p>I reported a zip bomb vulnerability to the CPython community in 2019. Here are all the interesting resources and ideas.</p>
+<p><a target="_blank" rel="noopener" href="https://bugs.python.org/issue36462">Issue Discussion on BPO</a></p>
+<p><a target="_blank" rel="noopener" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9674">CVE-2019-9674</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/zipfile.html#decompression-pitfalls">Decompression pitfall I wrote for official documentation</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/python/cpython/pull/13378">Pull Request related it</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=-S4JVQt6GX4&ab_channel=PyConKorea">PyCon Korea 2019 - Click Click Boom! Bombs Over Our Minds</a></p>
+<h1 id="zipfile-analysis"><a href="#zipfile-analysis" class="headerlink" title="zipfile analysis"></a>zipfile analysis</h1><p>According to Black Hat’s  <a target="_blank" rel="noopener" href="https://www.blackhat.com/docs/us-16/materials/us-16-Marie-I-Came-to-Drop-Bombs-Auditing-The-Compression-Algorithm-Weapons-Cache.pdf">Cara Marie</a> research, there are some solutions against Zip Bomb. By limiting the size of the block to be read at a time, if there is still data remaining after the block that needs to be decompressed after reading this block, it is considered that it is possible to be a Zip Bomb.</p>
+<p>Below is <a target="_blank" rel="noopener" href="https://www.blackhat.com/docs/us-16/materials/us-16-Marie-I-Came-to-Drop-Bombs-Auditing-The-Compression-Algorithm-Weapons-Cache.pdf">Cara Marie</a> code</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> zlib</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decompress</span>(<span class="params">data, maxsize=<span class="number">1024000</span></span>):</span><br><span class="line">    dec = zlib.decompressobj()</span><br><span class="line">    data = dec.decompress(data, maxsize)</span><br><span class="line">    <span class="keyword">if</span> dec.unconsumed_tail:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">&quot;Possible bomb&quot;</span>)</span><br><span class="line">    <span class="keyword">del</span> dec</span><br><span class="line">    <span class="keyword">return</span> data</span><br></pre></td></tr></table></figure>
+
+<p>As you can see, the strategy to defeating the zip bomb is by limiting a block, in this case, is max size 102400. However, we take a look at the Python standard library, <a target="_blank" rel="noopener" href="https://github.com/python/cpython/blob/3.9/Lib/zipfile.py">zipfile</a>.</p>
+<hr>
+<p>According to Cara Marie’s approach, we try to figure out the difference between zipfile and zlib and <strong>why we can’t use zipfile directly for preventing zip bombs</strong>, so we started to study zipfile source code.</p>
+<h1 id="zipfile"><a href="#zipfile" class="headerlink" title="zipfile"></a><a target="_blank" rel="noopener" href="https://github.com/python/cpython/blob/master/Lib/zipfile.py">zipfile</a></h1><p>Since I focus on the zip format and pick the most commonly used algorithm, DEFLATED algorithm. Inside the zipfile, we can see the location of unzipped function, starting at line <code>702</code>, getting the zlib object, and finally returning the object.</p>
+<p><strong><a target="_blank" rel="noopener" href="https://github.com/python/cpython/blob/f2320b37d9c85d8ddfc0c6afa81b77cd5f6e5ef2/Lib/zipfile.py#L702-L716">zlib.decompressobj(-15)</a></strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">_get_decompressor</span>(<span class="params">compress_type</span>):</span><br><span class="line">    <span class="keyword">if</span> compress_type == ZIP_STORED:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    <span class="keyword">elif</span> compress_type == ZIP_DEFLATED:</span><br><span class="line">        <span class="keyword">return</span> zlib.decompressobj(-<span class="number">15</span>)</span><br><span class="line">    <span class="keyword">elif</span> compress_type == ZIP_BZIP2:</span><br><span class="line">        <span class="keyword">return</span> bz2.BZ2Decompressor()</span><br><span class="line">    <span class="keyword">elif</span> compress_type == ZIP_LZMA:</span><br><span class="line">        <span class="keyword">return</span> LZMADecompressor()</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        descr = compressor_names.get(compress_type)</span><br><span class="line">        <span class="keyword">if</span> descr:</span><br><span class="line">            <span class="keyword">raise</span> NotImplementedError(<span class="string">&quot;compression type %d (%s)&quot;</span> % (compress_type, descr))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">raise</span> NotImplementedError(<span class="string">&quot;compression type %d&quot;</span> % (compress_type,))</span><br></pre></td></tr></table></figure>
+
+<p>From the above code, we can know that the zipfile is based on what zlib does. So we have to deep dive into what zlib did?</p>
+<h1 id="zlib"><a href="#zlib" class="headerlink" title="zlib"></a><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/zlib.html">zlib</a></h1><p>According to the zlib documentation</p>
+<blockquote>
+<p>There are two ways to compression and decompression, .compress() and .decompress() will fit all files into memory at once. In contrast to the method of the object. It using .compressobj() and .decompressobj() which won’t fit into memory at once.</p>
+</blockquote>
+<p>There are two ways to compress&#x2F;decompress.</p>
+<ol>
+<li>.compress() and .decompress() will put the entire file into memory at a time</li>
+<li>.compressobj() and .decompressobj() separate the file , compress&#x2F;decompress one block at a time</li>
+</ol>
+<hr>
+<p>However, the official documentation does not clearly explain how to use the API to decompress files. The purpose of this method is to obtain the file data stream and decompress it through the Low-Level method. And we went back to the zipfile module and found that they had already done the decompression of zlib, so we planned to apply the patch for zipfile first.</p>
+<p>In the way that zipfile belongs to <code>decompressobj</code>, we have the first way to accumulate chunks. As long as we can find out where to do the decompression of chunks, we accumulate it and give a threshold. If it exceeds, then consider that it is possible to be the zip bomb.</p>
+<h1 id="Get-back-at-the-zipfile"><a href="#Get-back-at-the-zipfile" class="headerlink" title="Get back at the zipfile"></a>Get back at the zipfile</h1><ol>
+<li>Starting with the object</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://github.com/python/cpython/blob/f2320b37d9c85d8ddfc0c6afa81b77cd5f6e5ef2/Lib/zipfile.py#L706">Line 706</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> zlib.decompressobj(-<span class="number">15</span>)</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/python/cpython/blob/f2320b37d9c85d8ddfc0c6afa81b77cd5f6e5ef2/Lib/zipfile.py#L791">Line 791</a></p>
+<p>It is the place where the class of zlib.decompressobj(-15) object is obtained and initialized.</p>
+<p>which belongs to ZipExtFile class</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, fileobj, mode, zipinfo, decrypter=<span class="literal">None</span>,close_fileobj=<span class="literal">False</span></span>):</span><br></pre></td></tr></table></figure>
+
+<p>Let’s find out what <code>fileobj</code> is</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/python/cpython/blob/f2320b37d9c85d8ddfc0c6afa81b77cd5f6e5ef2/Lib/zipfile.py#L1545">Line 1545</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> ZipExtFile(zef_file, mode, zinfo, zd, <span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Return the class, and use zef_file, then follow zef_file</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/python/cpython/blob/f2320b37d9c85d8ddfc0c6afa81b77cd5f6e5ef2/Lib/zipfile.py#L719">Line 719</a></p>
+<p>_SharedFile being initialized</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, file, pos, close, lock, writing</span>):</span><br></pre></td></tr></table></figure>
+
+<p>Here we know that when zlib is decompressed, you can’t start decompressing directly to Streaming, and you need to skip the file encoding in front of the zip file.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/python/cpython/blob/f2320b37d9c85d8ddfc0c6afa81b77cd5f6e5ef2/Lib/zipfile.py#L759">Line 759</a></p>
+<p>In class _Tellable: to initialize the position of the indicator that gets the file descriptor</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, fp</span>):</span><br><span class="line">    self.fp = fp</span><br><span class="line">    self.offset = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<p>and then</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/python/cpython/blob/f2320b37d9c85d8ddfc0c6afa81b77cd5f6e5ef2/Lib/zipfile.py#L977-L984">Line 977</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">elif</span> self._compress_type == ZIP_DEFLATED:</span><br><span class="line">    n = <span class="built_in">max</span>(n, self.MIN_READ_SIZE)</span><br><span class="line">    data = self._decompressor.decompress(data, n)</span><br><span class="line">    self._eof = (self._decompressor.eof <span class="keyword">or</span></span><br><span class="line">                 self._compress_left &lt;= <span class="number">0</span> <span class="keyword">and</span></span><br><span class="line">                 <span class="keyword">not</span> self._decompressor.unconsumed_tail)</span><br><span class="line">    <span class="keyword">if</span> self._eof:</span><br><span class="line">        data += self._decompressor.flush()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>We observed that after choosing to use the ZIP_DEFLATED compression algorithm, we did a function max to get n.</p>
+<h1 id="Key-Point"><a href="#Key-Point" class="headerlink" title="Key Point"></a>Key Point</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">max</span>(n, self.MIN_READ_SIZE)</span><br></pre></td></tr></table></figure>
+
+<p>When you use zlib.decompressobj as a block, how big is your block?<br>, self.MIN_READ_SIZE is preset to 4096 bytes, which is the size of a page in the operating system.</p>
+<h2 id="Cara-Marie’s-solution"><a href="#Cara-Marie’s-solution" class="headerlink" title="Cara Marie’s solution"></a>Cara Marie’s solution</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> zlib</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decompress</span>(<span class="params">data, maxsize=<span class="number">1024000</span></span>):</span><br><span class="line">    dec = zlib.decompressobj()</span><br><span class="line">    data = dec.decompress(data, maxsize)</span><br><span class="line">    <span class="keyword">if</span> dec.unconsumed_tail:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">&quot;Possible bomb&quot;</span>)</span><br><span class="line">    <span class="keyword">del</span> dec</span><br><span class="line">    <span class="keyword">return</span> data</span><br></pre></td></tr></table></figure>
+
+<h2 id="It-sets-maxsize-to-102400-bytes"><a href="#It-sets-maxsize-to-102400-bytes" class="headerlink" title="It sets maxsize to 102400 bytes"></a>It sets maxsize to 102400 bytes</h2><p>According to the official document</p>
+<blockquote>
+<p>Decompress.decompress(data, max_length&#x3D;0)<br>Decompress data, returning a bytes object containing the uncompressed data corresponding to at least part of the data in the string. This data should be concatenated to the output produced by any preceding calls to the decompress() method. Some of the input data may be preserved in internal buffers for later processing.</p>
+<p>If the optional parameter max_length is non-zero then the return value will be no longer than max_length. This may mean that not all of the compressed input can be processed, and unconsumed data will be stored in the attribute unconsumed_tail. This byte string must be passed to a subsequent call to decompress() if decompression is to continue. If max_length is zero then the whole input is decompressed, and unconsumed_tail is empty.</p>
+<p>Changed in version 3.6: max_length can be used as a keyword argument.</p>
+</blockquote>
+<p>Max_length represents the file block size that can be read into the memory at a time and is marked with unconsumed_tail to see if any remaining files need to be decompressed.</p>
+<p>Therefore, his idea is more than 102400 bytes. If there is any remaining data, it means there may be a zip bomb.</p>
+<p><img src="https://i.imgur.com/7schHy0.png"></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/krnick/" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2025 JunWei Song<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

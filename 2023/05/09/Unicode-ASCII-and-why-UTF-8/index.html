@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="Unicode, ASCII, and why UTF-8歷史很久以前，只有 ASCII ，當時所使用的符號並不多，所以可以透過 ASCII 來做一對一的符號對照表， ASCII 用了 7 個 bits 來表示 128 個 character，包括大寫英文字母、小寫英文字母、以及其他符號。
+然而，隨"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="JunWei Song"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Unicode, ASCII, and why UTF-8"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Unicode, ASCII, and why UTF-8歷史很久以前，只有 ASCII ，當時所使用的符號並不多，所以可以透過 ASCII 來做一對一的符號對照表， ASCII 用了 7 個 bits 來表示 128 個 character，包括大寫英文字母、小寫英文字母、以及其他符號。
+然而，隨"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="JunWei Song&#39; Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://krnick.github.ioimg/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://krnick.github.ioimg/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>Unicode, ASCII, and why UTF-8 - JunWei Song&#39; Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="img/favicon.ico"/>
+    
+
+<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="JunWei Song' Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">JunWei Song</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about">
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/krnick">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Unicode, ASCII, and why UTF-8</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2023-05-09
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="Unicode-ASCII-and-why-UTF-8"><a href="#Unicode-ASCII-and-why-UTF-8" class="headerlink" title="Unicode, ASCII, and why UTF-8"></a>Unicode, ASCII, and why UTF-8</h1><h2 id="歷史"><a href="#歷史" class="headerlink" title="歷史"></a>歷史</h2><p>很久以前，只有 ASCII ，當時所使用的符號並不多，所以可以透過 ASCII 來做一對一的符號對照表， ASCII 用了 7 個 bits 來表示 128 個 <code>character</code>，包括大寫英文字母、小寫英文字母、以及其他符號。</p>
+<p>然而，隨著其他語言的興起，ASCII 已經不能再完全表達所有語言的符號，例如中文、日文、韓文等等，因此 Unicode 出現了作為解決方案。Unicode 這套對照表可以對照世界上所有的符號，例如 “你” 的 Unicode 編碼就是 “\u4f60”，而這個 \u4f60 稱之為 Unicode code point。</p>
+<p>Unicode 解析編碼有幾種，包括 UTF-32、UTF-16、UTF-8。其中，UTF-32 使用固定 32 bits 或 4 bytes 的空間來儲存，依此類推，但最大的問題是會有空間浪費的問題。因此，最常被使用的解析編碼方式是 UTF-8。UTF-8 則是一種長度可變的編碼方式，可以同時解析介於 8 bits 到 32 bits 長度的字元（1 byte 到 4 bytes），對於 ASCII 則是 1 byte 也就代表可以兼容 ASCII。最高位元的 bit 代表接下來的 UTF-8 使用了幾個 byte。</p>
+<p>當我們使用 \x 表示一個字元時，後面的十六進制數字表示這個字元在 UTF-8 編碼中所佔用的字節的值。例如，\x41 表示 ASCII 範圍內的大寫字母 A，因為它的 UTF-8 編碼只需要一個字節，而這個字節的值恰好是 41（十六進制）。</p>
+<h2 id="UTF-8-格式"><a href="#UTF-8-格式" class="headerlink" title="UTF-8 格式"></a>UTF-8 格式</h2><p>0xxxxxxx                              -&gt; 0-127 (同 ASCII)<br>110xxxxx 10xxxxxx                     -&gt; 128-2047<br>1110xxxx 10xxxxxx 10xxxxxx            -&gt; 2048-65535<br>11110xxx 10xxxxxx 10xxxxxx 10xxxxxx   -&gt; 65536-0x10ffff</p>
+<p>\x 代表 1 byte<br>\u 代表 16 bit unicode (\uhhhh)<br>\U 代表 2 bit unicode (\Uhhhhhhhh)</p>
+<h2 id="例如"><a href="#例如" class="headerlink" title="例如"></a>例如</h2><ul>
+<li>世界</li>
+<li>“\u4e16\u754c” 為 <code>世界</code> 的 \u unicode code point 表示法</li>
+<li>“\xe4\xb8\x96\xe7\x95\x8c” 為 <code>世界</code> 的 \x unicode code point 表示法</li>
+</ul>
+<p>其中，若要將 “\u4e16” 轉換為單一 byte 的表示方式，轉換流程如下：</p>
+<ol>
+<li>先將”\u4e16”轉換成2進位表示 -&gt; 0100111000010110</li>
+<li>依照範圍，0100111000010110 需要使用3個bytes，也就是 1110xxxx 10xxxxxx 10xxxxxx</li>
+<li>將對應的2進位 -&gt; 0100111000010110，依序填入 xxx 中</li>
+<li>得到結果：1110<code>0100</code> 10<code>111000</code> 10<code>010110</code></li>
+<li>再將此2進位表示轉換為16進位 -&gt; E4B896</li>
+<li>因此，”\u4e16”在UTF-8編碼下所對應的bytes為3，並且分別為”\xE4”、”\xB8”和”\x96”。</li>
+</ol>
+<p>Ref:<br><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ut74oHojxqo&amp;ab_channel=StudyingWithAlex">https://www.youtube.com/watch?v=ut74oHojxqo&amp;ab_channel=StudyingWithAlex</a></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/krnick/" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2025 JunWei Song<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
