@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="Analyze Roaming Mantis with Quark-Engine
+IntroductionRoaming Mantis is a notorious malware that was first discovered in 2018 and aims at the Asian reg"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="JunWei Song"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Android Malware Analysis - Roaming Mantis"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Analyze Roaming Mantis with Quark-Engine
+IntroductionRoaming Mantis is a notorious malware that was first discovered in 2018 and aims at the Asian reg"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="JunWei Song&#39; Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://krnick.github.ioimg/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://krnick.github.ioimg/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>Android Malware Analysis - Roaming Mantis - JunWei Song&#39; Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="img/favicon.ico"/>
+    
+
+<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="JunWei Song' Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">JunWei Song</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about">
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/krnick">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Android Malware Analysis - Roaming Mantis</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2021-09-30
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Android/">#Android</a> <a href="/tags/Malware/">#Malware</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="Analyze-Roaming-Mantis-with-Quark-Engine"><a href="#Analyze-Roaming-Mantis-with-Quark-Engine" class="headerlink" title="Analyze Roaming Mantis with Quark-Engine"></a>Analyze Roaming Mantis with Quark-Engine</h1><p><img src="https://i.imgur.com/HSJF3nj.png"></p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Roaming Mantis is a notorious malware that was first discovered in 2018 and aims at the Asian region. In the past two years, it has evolved and spread around the world. This malware intends to steal personal sensitive data (e.g. account information, SMS messages, and voice calls). Also, the malware bypassed the two-factor authentication by monitoring SMS messages.</p>
+<p>According to the report from Kaspersky Lab, the main distribution of this malware is using DNS hijacking through a compromised router. As long as the user connects to the router, their DNS lookup will be redirected to the malicious URL. After the user connects to the malicious website, they will be prompted to download the Google update application, which turns out to be the Android malware.</p>
+<p>In this report, we focus on the APK downloaded by victims who were redirected to the malicious URL. We aim at showing how malware analysts can use Quark Engine to quickly understand what this malware does to the victim.</p>
+<p>This malware contains a DEX file encoded by the base64 algorithm. Therefore, we will first demonstrate how we can use sets of detection rules to quickly find where to decode the base64 algorithm and where to load the DEX file in the malware.</p>
+<p>After decrypting the DEX file. We then further investigate malicious activities in the DEX file with sets of our detection rules. Also, we prove that obfuscation techniques are useless due to the magic design of Quark Engine.</p>
+<p>All in all, we show that by using Quark and detection rule sets, malware analysis can be so much fun.</p>
+<h1 id="Investigating-the-Android-APK"><a href="#Investigating-the-Android-APK" class="headerlink" title="Investigating the Android APK"></a>Investigating the Android APK</h1><h2 id="Summary-Report-for-the-APK"><a href="#Summary-Report-for-the-APK" class="headerlink" title="Summary Report for the APK"></a>Summary Report for the APK</h2><p><img src="https://i.imgur.com/Ycu9DTH.png"></p>
+<p>In this report, our engine found 10 potential malicious activities with detection rules accordingly. As for the confidence, scores, and weight, please take a look at our talk at DEFCON Blue Team Village videos on YouTube. We explain everything there.</p>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/XK-yqHPnsvc" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+
+<p>The scoring system will only take effect if we have enough detection rules. Before we accumulate enough rules, we set the scores and weights all the same. Therefore, the risk levels and total scores are for reference only.</p>
+<p>After generating the summary report, we then use an automatic technique to classify these 10 potential malicious activities.</p>
+<h2 id="Exploring-Malicious-Activities"><a href="#Exploring-Malicious-Activities" class="headerlink" title="Exploring Malicious Activities"></a>Exploring Malicious Activities</h2><h3 id="Rule-Classification-onCreate"><a href="#Rule-Classification-onCreate" class="headerlink" title="Rule Classification: onCreate"></a>Rule Classification: onCreate</h3><p><img src="https://i.imgur.com/8Q1Ajf7.png"></p>
+<p>The picture above shows that 5 suspicious activities were found under the function onCreate.</p>
+<p>This picture can help malware analysts to understand the malware in an easy way.</p>
+<p>As shown above, we found five behaviors in function onCreate. Despite that rules are not listed in the right order, we can still piece them together and tell a story.</p>
+<p>With the descriptions in the table, we can simply and quickly guess that this function decodes and load the suspicious payload.</p>
+<p>After validating through reading the smali-like source codes, our guess is right!</p>
+<p>And the right order of the behaviors is:</p>
+<ol>
+<li>Get the absolute path of the file and store it in a string.</li>
+<li>Open a file from the given absolute path of the file.</li>
+<li>Read a file from the assets directory.</li>
+<li>Write file after Base64 decoding.</li>
+<li>Load additional DEX files dynamically.</li>
+</ol>
+<h3 id="Rule-Classification-a"><a href="#Rule-Classification-a" class="headerlink" title="Rule Classification: a"></a>Rule Classification: a</h3><p><img src="https://i.imgur.com/cB0ke4D.png"></p>
+<p>As shown above, it is obvious that function a is about to do method reflection, MAGIC!</p>
+<h3 id="Rule-Classification-run"><a href="#Rule-Classification-run" class="headerlink" title="Rule Classification: run"></a>Rule Classification: run</h3><p><img src="https://i.imgur.com/oJVy5b3.png"></p>
+<p>Anther method reflection detected!! MAGIC!</p>
+<h1 id="Decrypting-the-DEX-file"><a href="#Decrypting-the-DEX-file" class="headerlink" title="Decrypting the DEX file"></a>Decrypting the DEX file</h1><p>As mentioned above, we know that the Roaming Mantis reads a file from the assets directory and uses Base64 to decode it. For further investigation, we find the file of the DEX payload.</p>
+<p><img src="https://i.imgur.com/8isbtIy.png"></p>
+<p>After unzipping the “assets&#x2F;db” file, we then use the Base64 to decode it and rename it Roaming_Mantis.dex.</p>
+<p><img src="https://i.imgur.com/jsyEBYd.png"></p>
+<p>Now we have the DEX payload!.</p>
+<hr>
+<h2 id="Summary-Report-of-the-DEX-file"><a href="#Summary-Report-of-the-DEX-file" class="headerlink" title="Summary Report of the DEX file"></a>Summary Report of the DEX file</h2><p>Now, let’s do the summary report again for the DEX payload, we found 37 suspicious activities.</p>
+<p><img src="https://i.imgur.com/CrY5STX.png"></p>
+<p>We simply summarize these suspicious behaviors into twelve categories.</p>
+<ol>
+<li>Connect to the remote server</li>
+<li>Start a web server</li>
+<li>Monitor&#x2F;Delete&#x2F;Send SMS&#x2F;MMS</li>
+<li>Access network information</li>
+<li>Access phone information</li>
+<li>Access personal information</li>
+<li>Record audio&#x2F;video</li>
+<li>Load external class</li>
+<li>Access currently running applications and installed packages</li>
+<li>Make a phone call</li>
+<li>Open a web page</li>
+<li>Install other APKs from the file</li>
+</ol>
+<p>Next, we will introduce some interesting and highly suspicious activities to you based on the above categories.</p>
+<h2 id="1-Connect-to-the-remote-server"><a href="#1-Connect-to-the-remote-server" class="headerlink" title="1. Connect to the remote server"></a>1. Connect to the remote server</h2><h3 id="Rule-Classification-a-x2F-b-a"><a href="#Rule-Classification-a-x2F-b-a" class="headerlink" title="Rule Classification: a&#x2F;b;a"></a>Rule Classification: a&#x2F;b;a</h3><p><img src="https://i.imgur.com/H2w1mJw.png"></p>
+<p>C2 connections are common in malware. This is a clue for further C2 investigation.</p>
+<h2 id="2-Start-a-web-server"><a href="#2-Start-a-web-server" class="headerlink" title="2. Start a web server"></a>2. Start a web server</h2><h3 id="Rule-Classification-b-x2F-g-run"><a href="#Rule-Classification-b-x2F-g-run" class="headerlink" title="Rule Classification: b&#x2F;g;run"></a>Rule Classification: b&#x2F;g;run</h3><p><img src="https://i.imgur.com/4Wk6bYC.png"></p>
+<p>Our investigation proves that the malware starts a web server and tricks users into filling credentials like username, password, etc.</p>
+<h2 id="3-Monitor-x2F-Delete-x2F-Send-SMS-x2F-MMS"><a href="#3-Monitor-x2F-Delete-x2F-Send-SMS-x2F-MMS" class="headerlink" title="3. Monitor&#x2F;Delete&#x2F;Send SMS&#x2F;MMS"></a>3. Monitor&#x2F;Delete&#x2F;Send SMS&#x2F;MMS</h2><h3 id="Rule-Classification-com-x2F-n-b"><a href="#Rule-Classification-com-x2F-n-b" class="headerlink" title="Rule Classification: com&#x2F;n;b"></a>Rule Classification: com&#x2F;n;b</h3><p><img src="https://i.imgur.com/ZDz9lKw.png"></p>
+<h3 id="Rule-Classification-com-x2F-Loader-s-onReceive"><a href="#Rule-Classification-com-x2F-Loader-s-onReceive" class="headerlink" title="Rule Classification: com&#x2F;Loader$s;onReceive"></a>Rule Classification: com&#x2F;Loader$s;onReceive</h3><p><img src="https://i.imgur.com/HdtYquG.png"></p>
+<h3 id="Rule-Classification-com-x2F-Loader-start"><a href="#Rule-Classification-com-x2F-Loader-start" class="headerlink" title="Rule Classification: com&#x2F;Loader;start"></a>Rule Classification: com&#x2F;Loader;start</h3><p><img src="https://i.imgur.com/bbiqb9e.png"></p>
+<p>Our investigation proves that these operations concerning SMS might launch activities like:</p>
+<ol>
+<li>Steal verification code for the two-factor authentication.</li>
+<li>Steal verification code during online purchasing.</li>
+</ol>
+<h2 id="4-Access-phone-information"><a href="#4-Access-phone-information" class="headerlink" title="4. Access phone information"></a>4. Access phone information</h2><h3 id="Rule-Classification-a-x2F-a-a"><a href="#Rule-Classification-a-x2F-a-a" class="headerlink" title="Rule Classification: a&#x2F;a;a"></a>Rule Classification: a&#x2F;a;a</h3><p><img src="https://i.imgur.com/4q30DC6.png"></p>
+<h3 id="Rule-Classification-com-x2F-Loader-ag-1-a"><a href="#Rule-Classification-com-x2F-Loader-ag-1-a" class="headerlink" title="Rule Classification: com&#x2F;Loader$ag$1;a"></a>Rule Classification: com&#x2F;Loader$ag$1;a</h3><p><img src="https://i.imgur.com/qE24Cjr.png"></p>
+<p>Our investigation proves that these operations concerning “access phone information” might launch activities like:</p>
+<ol>
+<li>Query the IMEI number to targeting the Asian region.</li>
+<li>Check the SIM card status just make sure the victim’s phone works.</li>
+</ol>
+<h2 id="5-Record-audio-x2F-video"><a href="#5-Record-audio-x2F-video" class="headerlink" title="5. Record audio&#x2F;video"></a>5. Record audio&#x2F;video</h2><h3 id="Rule-Classification-com-x2F-j-a"><a href="#Rule-Classification-com-x2F-j-a" class="headerlink" title="Rule Classification: com&#x2F;j;a"></a>Rule Classification: com&#x2F;j;a</h3><p><img src="https://i.imgur.com/7RCWH27.png"></p>
+<p>Thrilling! This malware records your audio&#x2F;video!</p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>This report shows how malware analysts can use the quark engine to quickly guess behaviors of malware and to quickly validate their guess through call graphs and the classification table.</p>
+<p>In this report, we show that Quark Engine bypassed the obfuscation techniques used in Roaming Mantis. Also, this time we provide some useful rule sets for the detection. E.g. detecting payload decryption, dex loader, method reflection, SMS operation, potential c2 connection etc. And all these rules are generated by using our auto-generate tools.</p>
+<p>We’re proud of our work and we love to play around with it.</p>
+<p>So, if you want to take a sip of the quark engine. Please visit our GitHub  repository:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://bit.ly/2ISYG2s">https://bit.ly/2ISYG2s</a></li>
+</ul>
+<p>And the rules used in this report.</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://bit.ly/3jAOkAv">https://bit.ly/3jAOkAv</a></li>
+</ul>
+<p>You can generate rules by yourself if you can’t wait for our next rule release!</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://bit.ly/2IJNxkE">https://bit.ly/2IJNxkE</a></li>
+</ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/krnick/" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2025 JunWei Song<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

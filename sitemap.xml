@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://krnick.github.io/about/index.html</loc>
+    
+    <lastmod>2025-06-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/2021/10/07/How-to-draft-a-new-release-on-PyPi-with-Github-Action/</loc>
+    
+    <lastmod>2025-06-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/2022/04/22/PyCharm-Debug/</loc>
+    
+    <lastmod>2025-06-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/2022/04/22/Mining-malware-analysis/</loc>
+    
+    <lastmod>2025-06-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/2021/09/30/Roaming-Mantis-with-Quark-Engine/</loc>
+    
+    <lastmod>2025-06-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/2023/05/09/Unicode-ASCII-and-why-UTF-8/</loc>
+    
+    <lastmod>2025-06-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/2022/06/05/Using-SSH-to-connect-with-Github/</loc>
+    
+    <lastmod>2025-06-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/2022/04/22/androguard-code-tracing/</loc>
+    
+    <lastmod>2025-06-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/2020/09/24/pipenv/</loc>
+    
+    <lastmod>2025-06-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/categories/index.html</loc>
+    
+    <lastmod>2025-06-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/tags/index.html</loc>
+    
+    <lastmod>2025-06-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/2021/10/12/Android-APP-Bundle/</loc>
+    
+    <lastmod>2025-06-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/2021/09/30/CPython-zipfile-Code-Tracing/</loc>
+    
+    <lastmod>2025-06-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/2022/05/04/Cheat-sheet-for-poetry/</loc>
+    
+    <lastmod>2025-06-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/2021/05/03/Debian-Packaging/</loc>
+    
+    <lastmod>2025-06-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/2023/05/01/Debug-Golang-with-VSCode/</loc>
+    
+    <lastmod>2025-06-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/2022/04/22/Frida-tips/</loc>
+    
+    <lastmod>2025-06-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/2021/11/24/GIL/</loc>
+    
+    <lastmod>2025-06-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/2022/04/22/Github-Bot/</loc>
+    
+    <lastmod>2025-06-30</lastmod>
+    
+  </url>
+  
+
+  <url>
+    <loc>https://krnick.github.io/</loc>
+    <lastmod>2025-06-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+  <url>
+    <loc>https://krnick.github.io/tags/Android/</loc>
+    <lastmod>2025-06-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/tags/vulnerability/</loc>
+    <lastmod>2025-06-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/tags/python/</loc>
+    <lastmod>2025-06-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/tags/Debian/</loc>
+    <lastmod>2025-06-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/tags/Linux/</loc>
+    <lastmod>2025-06-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/tags/Kali-Linux/</loc>
+    <lastmod>2025-06-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/tags/github/</loc>
+    <lastmod>2025-06-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/tags/pypi/</loc>
+    <lastmod>2025-06-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/tags/Malware/</loc>
+    <lastmod>2025-06-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://krnick.github.io/tags/git/</loc>
+    <lastmod>2025-06-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  
+</urlset>

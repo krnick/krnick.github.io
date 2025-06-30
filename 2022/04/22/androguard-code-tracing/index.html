@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="androguard code traceandroguard UsageThis is the most common way how we use androguard.
+1234from androguard.misc import AnalyzeAPKapk, dalvikvmformat,"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="JunWei Song"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="androguard code tracing"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="androguard code traceandroguard UsageThis is the most common way how we use androguard.
+1234from androguard.misc import AnalyzeAPKapk, dalvikvmformat,"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="JunWei Song&#39; Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://krnick.github.ioimg/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://krnick.github.ioimg/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>androguard code tracing - JunWei Song&#39; Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="img/favicon.ico"/>
+    
+
+<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="JunWei Song' Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">JunWei Song</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about">
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/krnick">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>androguard code tracing</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2022-04-22
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="androguard-code-trace"><a href="#androguard-code-trace" class="headerlink" title="androguard code trace"></a>androguard code trace</h1><h2 id="androguard-Usage"><a href="#androguard-Usage" class="headerlink" title="androguard Usage"></a>androguard Usage</h2><p>This is the most common way how we use androguard.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> androguard.misc <span class="keyword">import</span> AnalyzeAPK</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">apk, dalvikvmformat, analysis = AnalyzeAPK(apk_filepath)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Entry-Point"><a href="#Entry-Point" class="headerlink" title="Entry Point"></a>Entry Point</h2><p>Let’ us start from the <em><strong>AnalyzeAPK</strong></em>.</p>
+<h2 id="AnalyzeAPK-androguard-x2F-misc-py"><a href="#AnalyzeAPK-androguard-x2F-misc-py" class="headerlink" title="AnalyzeAPK(androguard&#x2F;misc.py)"></a>AnalyzeAPK(androguard&#x2F;misc.py)</h2><p>Responsible for the generation of the three objects below.</p>
+<ul>
+<li>apk</li>
+<li>dalvikvmformat</li>
+<li>analysis</li>
+</ul>
+<hr>
+<h3 id="apk-object"><a href="#apk-object" class="headerlink" title="apk object"></a><a target="_blank" rel="noopener" href="https://androguard.readthedocs.io/en/latest/api/androguard.core.bytecodes.html#androguard.core.bytecodes.apk.APK">apk object</a></h3><p>You can get information like the package name, permissions from the AndroidManifest.xml, which generated by class APK().</p>
+<p><strong>androguard&#x2F;misc.py</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = APK(_file, raw=raw)</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>androguard&#x2F;core&#x2F;bytecodes&#x2F;apk.py</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">APK</span>():</span><br></pre></td></tr></table></figure>
+
+<p>It will parse files in APK through Python zipfile module. This APK object is responsible for decompressing “AndroidManifest.xml” in APK.</p>
+<p>Implementation function:</p>
+<p><strong>androguard&#x2F;core&#x2F;bytecodes&#x2F;apk.py</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> skip_analysis:</span><br><span class="line">    self._apk_analysis()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">_apk_analysis</span>(<span class="params">self</span>)</span><br></pre></td></tr></table></figure>
+
+<p>ASRC class</p>
+<pre><code>for decoding resources.arsc
+</code></pre>
+<p>AXML class</p>
+<pre><code>for decoding AndroidManifest.xml and all other XML files
+</code></pre>
+<p>Inside this method, it will get the information below.</p>
+<ul>
+<li>AXML</li>
+<li>Permissions</li>
+<li>Each tag in xml</li>
+</ul>
+<p>The following video records the process of making an apk object.</p>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/CpwzaB6U7BU" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+
+
+<hr>
+<h3 id="dalvikvmformat-Object"><a href="#dalvikvmformat-Object" class="headerlink" title="dalvikvmformat Object"></a><a target="_blank" rel="noopener" href="https://androguard.readthedocs.io/en/latest/api/androguard.core.bytecodes.html#androguard.core.bytecodes.dvm.DalvikVMFormat">dalvikvmformat Object</a></h3><p>The DalvikVMFormat corresponds to the DEX file found inside the APK file. You can get classes, methods or strings from the DEX file.</p>
+<p><strong>androguard&#x2F;misc.py</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">d = []</span><br><span class="line">dx = Analysis()</span><br><span class="line"><span class="keyword">for</span> dex <span class="keyword">in</span> a.get_all_dex():</span><br><span class="line">    df = DalvikVMFormat(dex, using_api=a.get_target_sdk_version())</span><br><span class="line">    dx.add(df)</span><br><span class="line">    d.append(df)</span><br><span class="line">    df.set_decompiler(decompiler.DecompilerDAD(d, dx))</span><br><span class="line"></span><br><span class="line">dx.create_xref()</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> a, d, dx</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h3 id="Analysis-Object"><a href="#Analysis-Object" class="headerlink" title="Analysis Object"></a><a target="_blank" rel="noopener" href="https://androguard.readthedocs.io/en/latest/api/androguard.core.analysis.html#androguard.core.analysis.analysis.Analysis">Analysis Object</a></h3><p>The Analysis object should be used instead, as it contains special classes, which link information about the classes.dex and can even handle many DEX files at once.</p>
+<p>The Analysis contains a lot of information about (multiple) DalvikVMFormat objects Features are for example XREFs between Classes, Methods, Fields, and Strings. Yet another part is the creation of BasicBlocks, which is important in the usage of the Androguard Decompiler.</p>
+<p><strong>quark&#x2F;androguard&#x2F;misc.py</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dx = Analysis()</span><br></pre></td></tr></table></figure>
+
+<p><strong>androguard&#x2F;core&#x2F;analysis&#x2F;analysis.py</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Analysis</span>:</span><br></pre></td></tr></table></figure>
+
+<p>Find information inside DEX file:</p>
+<ul>
+<li>DalvikVMFormat objects</li>
+<li>classname</li>
+<li>string</li>
+<li>methods</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://androguard.readthedocs.io/en/latest/intro/gettingstarted.html">EXTERNAL method</a></p>
+<p>It is called the native API.</p>
+<p><a target="_blank" rel="noopener" href="https://androguard.readthedocs.io/en/latest/intro/gettingstarted.html#xrefs">XREFs</a></p>
+<p>Classes, Methods, Fields, and Strings.</p>
+<hr>
+<p>Initialize d and dx.</p>
+<p><img src="https://i.imgur.com/uBkdkWj.png"></p>
+<p>Prepare for the following code below.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> dex <span class="keyword">in</span> a.get_all_dex():</span><br><span class="line">    df = DalvikVMFormat(dex, using_api=a.get_target_sdk_version())</span><br><span class="line">    dx.add(df)</span><br><span class="line">    d.append(df)</span><br><span class="line">    df.set_decompiler(decompiler.DecompilerDAD(d, dx))</span><br><span class="line"></span><br><span class="line">dx.create_xref()</span><br></pre></td></tr></table></figure>
+
+<p>Param dex will return the raw data of all classes dex files.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">get_all_dex()</span><br><span class="line"></span><br><span class="line">    dexre = re.<span class="built_in">compile</span>(<span class="string">r&quot;classes(\d*).dex&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">filter</span>(<span class="keyword">lambda</span> x: dexre.match(x), self.get_files())</span><br></pre></td></tr></table></figure>
+
+<p><code>get_all_dex</code> get all the file names in the zip, and get all the class.dex files through regular expressions, it may be classes.dex or classes[0-9]+.dex.</p>
+<p><strong>quark&#x2F;androguard&#x2F;misc.py</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df = DalvikVMFormat(dex, using_api=a.get_target_sdk_version())</span><br></pre></td></tr></table></figure>
+
+<p>DalvikVMFormat takes the binary content of each DEX as a parameter, and initializes the class DalvikVMFormat according to the API version used.</p>
+<p><strong>androguard&#x2F;core&#x2F;bytecodes&#x2F;dvm.py</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">DalvikVMFormat</span>(bytecode.BuffHandle):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    This class can parse a classes.dex file of an Android application (APK).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    :param buff: a string which represents the classes.dex file</span></span><br><span class="line"><span class="string">    :param decompiler: associate a decompiler object to display the java source code</span></span><br><span class="line"><span class="string">    :type buff: bytes</span></span><br><span class="line"><span class="string">    :type decompiler: object</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    example::</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        d = DalvikVMFormat( read(&quot;classes.dex&quot;) )</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, buff, decompiler=<span class="literal">None</span>, config=<span class="literal">None</span>, using_api=<span class="literal">None</span></span>):</span><br><span class="line">        <span class="comment"># to allow to pass apk object ==&gt; we do not need to pass additionally target version</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">isinstance</span>(buff, APK):</span><br><span class="line">            self.api_version = buff.get_target_sdk_version()</span><br><span class="line">            buff = buff.get_dex()  <span class="comment"># getting dex from APK file</span></span><br><span class="line">        <span class="keyword">elif</span> using_api:</span><br><span class="line">            self.api_version = using_api</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.api_version = CONF[<span class="string">&quot;DEFAULT_API&quot;</span>]</span><br><span class="line"></span><br><span class="line">        <span class="built_in">super</span>().__init__(buff)</span><br><span class="line">        self._flush()</span><br><span class="line"></span><br><span class="line">        self.CM = ClassManager(self)</span><br><span class="line">        self.CM.set_decompiler(decompiler)</span><br><span class="line"></span><br><span class="line">        self._preload(buff)</span><br><span class="line">        self._load(buff)</span><br></pre></td></tr></table></figure>
+
+<p>This class can parse a classes.dex file of an Android application (APK).</p>
+<p><strong>androguard&#x2F;core&#x2F;bytecodes&#x2F;dvm.py</strong></p>
+<ul>
+<li>ClassManager</li>
+</ul>
+<p>This class is used to access to all elements (strings, type, proto …) of the dex format based on their offset or index.</p>
+<ul>
+<li>set_decompiler</li>
+</ul>
+<p>Setting the disassembled tool used for disassembling an apk such as Jadx or DAD.</p>
+<p>Last one:</p>
+<p><strong>androguard&#x2F;core&#x2F;analysis&#x2F;analysis.py</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dx.create_xref()</span><br></pre></td></tr></table></figure>
+
+<p>Create Class, Method, String, and Field crossreferences for all classes in the Analysis.</p>
+<p>If you are using multiple DEX files, this function must be called when all DEX files are added. If you call the function after every DEX file, it will only work for the first time.</p>
+<p>This function is already called in the object Analysis, so we don’t need to call it again.</p>
+<p>The following video records the process of making an DalvikVMFormat object.</p>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/Q3oCMVyhGLw" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+
+
+<h1 id="Important"><a href="#Important" class="headerlink" title="Important"></a>Important</h1><p>Only when calling the <code>get_source_method</code> function in <a target="_blank" rel="noopener" href="https://androguard.readthedocs.io/en/latest/api/androguard.decompiler.html#androguard.decompiler.decompiler.DecompilerDAD">DecompilerDAD</a> is it considered that disassemble an apk.</p>
+<p>In fact, we only use the information in the Dex file and the method of cross-references, as well as the information about android permission. We did not do the disassemble an apk.</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/krnick/" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2025 JunWei Song<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

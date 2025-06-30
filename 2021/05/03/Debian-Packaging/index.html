@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="Debian PackagingA while ago, I would like to package Quark to Debian package since we want to make Quark be part of Kali Linux. You can have a look at"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="JunWei Song"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Debian Packaging"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Debian PackagingA while ago, I would like to package Quark to Debian package since we want to make Quark be part of Kali Linux. You can have a look at"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="JunWei Song&#39; Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://krnick.github.ioimg/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://krnick.github.ioimg/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>Debian Packaging - JunWei Song&#39; Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="img/favicon.ico"/>
+    
+
+<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="JunWei Song' Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">JunWei Song</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about">
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/krnick">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Debian Packaging</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2021-05-03
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Debian/">#Debian</a> <a href="/tags/Linux/">#Linux</a> <a href="/tags/Kali-Linux/">#Kali Linux</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="Debian-Packaging"><a href="#Debian-Packaging" class="headerlink" title="Debian Packaging"></a>Debian Packaging</h1><p>A while ago, I would like to package Quark to Debian package since we want to make Quark be part of Kali Linux. You can have a look at the link below.</p>
+<p><a target="_blank" rel="noopener" href="https://bugs.kali.org/view.php?id=7121">Kali Linux issue 0007121</a></p>
+<h2 id="Kali-Linux-Release"><a href="#Kali-Linux-Release" class="headerlink" title="Kali Linux Release"></a>Kali Linux Release</h2><h3 id="1-Prepare-your-Kali-Linux-virtual-machine-to-build-the-Debian-package"><a href="#1-Prepare-your-Kali-Linux-virtual-machine-to-build-the-Debian-package" class="headerlink" title="1. Prepare your Kali Linux virtual machine to build the Debian package."></a>1. Prepare your Kali Linux virtual machine to build the Debian package.</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.virtualbox.org/wiki/Downloads">Virtualbox</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.kali.org/get-kali/#kali-virtual-machines">Kail Linux image for virtualbox</a></li>
+</ul>
+<h4 id="Update-your-kali-Linux-package-source"><a href="#Update-your-kali-Linux-package-source" class="headerlink" title="Update your kali Linux package source"></a>Update your kali Linux package source</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb http://http.kali.org/kali kali-rolling main non-free contrib&quot;</span> | sudo <span class="built_in">tee</span> /etc/apt/sources.list</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+
+<p>After setting up your virtual machine, you have to install the required packages based on the official documentation on this <a target="_blank" rel="noopener" href="https://www.kali.org/docs/development/setting-up-packaging-system/">website</a>.</p>
+<h4 id="Install-the-required-dependencies"><a href="#Install-the-required-dependencies" class="headerlink" title="Install the required dependencies"></a>Install the required dependencies</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y packaging-dev apt-file gitk mr</span><br><span class="line"></span><br><span class="line">sudo apt-get install -y devscripts debhelper dh-make git-buildpackage sbuild dh-python python3-all</span><br></pre></td></tr></table></figure>
+
+<h4 id="Set-up-sbuild-and-log-in-again-after-completion"><a href="#Set-up-sbuild-and-log-in-again-after-completion" class="headerlink" title="Set up sbuild and log in again after completion"></a>Set up sbuild and log in again after completion</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /srv/chroots/</span><br><span class="line"></span><br><span class="line">cd /srv/chroots/</span><br><span class="line"></span><br><span class="line">sudo sbuild-createchroot --keyring=/usr/share/keyrings/kali-archive-keyring.gpg --arch=amd64 --components=main,contrib,non-free --include=kali-archive-keyring kali-dev kali-dev-amd64-sbuild http://http.kali.org/kali</span><br><span class="line"></span><br><span class="line">echo &quot;source-root-groups=root,sbuild&quot; | sudo tee -a /etc/schroot/chroot.d/kali-dev-amd64-sbuild*</span><br><span class="line"></span><br><span class="line">sudo sbuild-adduser $USER</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-Creating-the-Debian-files"><a href="#2-Creating-the-Debian-files" class="headerlink" title="2. Creating the Debian files"></a>2. Creating the Debian files</h3><p>The Debian package needs that the following four files are required in the debian directory.</p>
+<ul>
+<li>control</li>
+<li>copyright</li>
+<li>changelog</li>
+<li>rules</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://www.debian.org/doc/manuals/maint-guide/dreq.en.html">Here</a> is the official documentation on how to write all four files.</p>
+<h3 id="3-Importing-the-Quark-project"><a href="#3-Importing-the-Quark-project" class="headerlink" title="3. Importing the Quark project"></a>3. Importing the Quark project</h3><p>Please replace the version number you would like to update.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/kali/packages/quark-engine ~/kali/upstream/</span><br><span class="line"></span><br><span class="line">wget https://github.com/quark-engine/quark-engine/archive/refs/tags/v21.4.3.tar.gz  -O ~/kali/upstream/quark-engine_21.4.3.orig.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /home/kali/kali/packages/quark-engine</span><br><span class="line"></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line">gbp import-orig ~/kali/upstream/quark-engine_21.4.3.orig.tar.gz</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="4-Build-Package"><a href="#4-Build-Package" class="headerlink" title="4. Build Package"></a>4. Build Package</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gbp buildpackage --git-builder=sbuild</span><br></pre></td></tr></table></figure>
+
+<p>Then you will have the Quark <code>.deb</code> file if everything goes well.</p>
+<h3 id="5-Request-package-upgrade"><a href="#5-Request-package-upgrade" class="headerlink" title="5. Request package upgrade"></a>5. Request package upgrade</h3><ol>
+<li><p>Register <a target="_blank" rel="noopener" href="https://bugs.kali.org/my_view_page.php">Kali Linux Bug Tracker</a></p>
+</li>
+<li><p>Report an issue</p>
+</li>
+</ol>
+<p>Report an issue by clicking the “Report Issue”</p>
+<p><img src="https://i.imgur.com/R7fGbSY.png"></p>
+<ol start="3">
+<li>Fill out the form</li>
+</ol>
+<p>Please choose the “Tool upgrade request” option in <code>category</code> and “kali-dev” option in <code>product version</code> and keep anything else default value.</p>
+<p><img src="https://i.imgur.com/Wclavqq.png"></p>
+<p>The next step is filling out the summary and the description.</p>
+<ol start="4">
+<li>Attach the .deb file</li>
+</ol>
+<p>Upload the <code>.deb</code> file you just created earlier.</p>
+<p><img src="https://i.imgur.com/5Mbu3hf.png"></p>
+<ol start="5">
+<li>Submit the issue</li>
+</ol>
+<p>When everything is all set, you can click “Submit issue”.</p>
+<p>Reference<br><a target="_blank" rel="noopener" href="https://www.kali.org/docs/development/public-packaging/">https://www.kali.org/docs/development/public-packaging/</a><br><a target="_blank" rel="noopener" href="https://www.kali.org/docs/development/intro-to-packaging-example/">https://www.kali.org/docs/development/intro-to-packaging-example/</a><br><a target="_blank" rel="noopener" href="https://www.kali.org/docs/development/setting-up-packaging-system/">https://www.kali.org/docs/development/setting-up-packaging-system/</a><br><a target="_blank" rel="noopener" href="https://www.kali.org/docs/development/advanced-packaging-example/">https://www.kali.org/docs/development/advanced-packaging-example/</a></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/krnick/" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2025 JunWei Song<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
